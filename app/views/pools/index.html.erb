@@ -1,0 +1,13 @@
+<h1>Pools</h1>
+<ul>
+<% @pools.each do |pool| %>
+<li><%= pool.name %></li>
+<%= link_to 'SHOW THIS POOL', pool_path(pool.id) %>
+<% end %>
+</ul>
+
+
+
+
+
+<%# ESCOLHER UMA PISCINA, e fazer o caminho para a piscina%>

@@ -1,15 +1,6 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>All pools</h1>
-      <ul class="list-group mb-3">
-        <% @pool.each do |pool| %>
-          <li class="list-group-item">
-            <%= link_to pool.id %>
-          </li>
-        <% end %>
-      </ul>
-      <%# <%= link_to "Add a new Pool", new_pool_path, class: 'btn btn-primary' %>
-    </div>
-  </div>
-</div>
+<h1>PARTIU PISCINA</h1>
+<%= link_to 'CADASTRAR NOVO USUARIO', new_user_registration_path %>
+<%= link_to 'LOGAR', new_user_session_path %>
+<%= button_to 'SAIR', destroy_user_session_path, method: :delete %>
+
+<%= link_to 'POOLS', pools_path %>
