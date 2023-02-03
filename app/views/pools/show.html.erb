@@ -1,7 +1,15 @@
 <div class="container">
-<h1><%= @pool.name %></h1>
-<p>Size: <%= @pool.size %></p>
-<p>Price: <%= @pool.price %></p>
 
-<%= button_to "edit a pool", edit_pool_path, method: :get %>
+<div class="card-pool">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-pool-infos">
+      <div>
+      <h2><%= @pool.name %></h2>
+      <p><%= @pool.size %> metros </p>
+      </div>
+      <h2 class="card-pool-pricing">R$<%= (@pool.price)/100 %>/ diária</h2>
+  </div>
+</div>
+<br>
+<%= button_to "Editar esta piscina", edit_pool_path, method: :get %>
 </div>
