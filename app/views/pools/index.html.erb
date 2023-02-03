@@ -6,15 +6,9 @@
     <div class="col-6">
       <li><%= pool.name %></li>
       <%= link_to 'SHOW THIS POOL', pool_path(pool.id) %>
+      <%= button_to "add a new pool", new_pool_path, method: :get %>
     </div>
     <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-
-
-<%# ESCOLHER UMA PISCINA, e fazer o caminho para a piscina%>

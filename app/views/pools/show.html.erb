@@ -2,3 +2,5 @@
 <p>Name: <%= @pool.name %></p>
 <p>Size: <%= @pool.size %></p>
 <p>Price: <%= @pool.price %></p>
+
+<%= button_to "edit a pool", edit_pool_path, method: :get %>
