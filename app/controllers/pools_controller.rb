@@ -30,11 +30,24 @@ class PoolsController < ApplicationController
 
     redirect_to pool_path(@pool)
   end
+  
+  def destroy
+    @pool = Pool.find(params[:id])
+    @pool.destroy
+  end
+
+  def search
+    @pools = Pool.where("name ILIKE ?", "%#{params[:query]}%")
+  end
 
   private
 
   def pool_params
-    params.require(:pool).permit(:name, :size, :price, :user_id)
+    params.require(:pool).permit(:name, :size, :price, :user_id, :pool_id)
+  end
+
+  def set_pool
+    @pool = Pool.find(params[:id])
   end
 
 end
