@@ -31,3 +31,9 @@ class PoolsController < ApplicationController
     redirect_to pool_path(@pool)
   end
 end
+
+private
+
+  def pool_params
+    params.require(:pool).permit(:name, :size, :price, :user_id)
+  end
