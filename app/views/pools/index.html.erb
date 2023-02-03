@@ -1,16 +1,14 @@
 <h1>Pools</h1>
-<ul>
-
-<%= button_to "add a new pool", new_pool_path, method: :get %>
-<% @pools.each do |pool| %>
-<li><%= pool.name %></li>
-<%= link_to 'SHOW THIS POOL', pool_path(pool.id) %>
-<% end %>
-</ul>
-
-
-
-
-
-
-<%# ESCOLHER UMA PISCINA, e fazer o caminho para a piscina%>
+<div class="container">
+  <div class="row row-cols-2">
+    <div class="row w-100">
+    <% @pools.each do |pool| %>
+    <div class="col-6">
+      <li><%= pool.name %></li>
+      <%= link_to 'SHOW THIS POOL', pool_path(pool.id) %>
+      <%= button_to "add a new pool", new_pool_path, method: :get %>
+    </div>
+    <% end %>
+    </div>
+  </div>
+</div>
