@@ -1,6 +1,7 @@
-<h1>Info of Pools:</h1>
-<p>Name: <%= @pool.name %></p>
+<div class="container">
+<h1><%= @pool.name %></h1>
 <p>Size: <%= @pool.size %></p>
 <p>Price: <%= @pool.price %></p>
 
 <%= button_to "edit a pool", edit_pool_path, method: :get %>
+</div>
