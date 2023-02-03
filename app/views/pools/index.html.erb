@@ -1,10 +1,13 @@
 <h1>Pools</h1>
 <ul>
+
+<%= button_to "add a new pool", new_pool_path, method: :get %>
 <% @pools.each do |pool| %>
 <li><%= pool.name %></li>
 <%= link_to 'SHOW THIS POOL', pool_path(pool.id) %>
 <% end %>
 </ul>
+
 
 
 
