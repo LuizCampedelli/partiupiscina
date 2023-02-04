@@ -16,7 +16,7 @@ class PoolsController < ApplicationController
     if @pool.save
       redirect_to root_path
     else
-      render :home
+      render :pools
     end
   end
 
