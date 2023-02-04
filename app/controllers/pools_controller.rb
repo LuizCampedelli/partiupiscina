@@ -18,7 +18,6 @@ class PoolsController < ApplicationController
     if @pool.save
       redirect_to root_path
     else
-      raise
       render :new
     end
   end
