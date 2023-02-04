@@ -1,4 +1,5 @@
 class PoolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @pools = Pool.all
   end
@@ -13,10 +14,12 @@ class PoolsController < ApplicationController
 
   def create
     @pool = Pool.new(pool_params)
+    @pool.user = current_user
     if @pool.save
       redirect_to root_path
     else
-      render :pools
+      raise
+      render :new
     end
   end
 
