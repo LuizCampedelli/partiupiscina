@@ -45,15 +45,11 @@ class PoolsController < ApplicationController
   private
 
   def pool_params
-    params.require(:pool).permit(:name, :size, :price, :user_id, :pool_id)
+    params.require(:pool).permit(:name, :size, :price, :photo)
   end
 
   def set_pool
     @pool = Pool.find(params[:id])
-  end
-
-  def article_params
-    params.require(:article).permit(:title, :body, :photo)
   end
 
 end
