@@ -53,3 +53,4 @@ class PoolsController < ApplicationController
   end
 
 end
+  
