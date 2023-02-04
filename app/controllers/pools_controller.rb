@@ -30,7 +30,7 @@ class PoolsController < ApplicationController
 
     redirect_to pool_path(@pool)
   end
-  
+
   def destroy
     @pool = Pool.find(params[:id])
     @pool.destroy
@@ -48,6 +48,10 @@ class PoolsController < ApplicationController
 
   def set_pool
     @pool = Pool.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :photo)
   end
 
 end

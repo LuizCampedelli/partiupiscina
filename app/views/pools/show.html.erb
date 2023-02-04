@@ -1,7 +1,7 @@
 <div class="container">
 
 <div class="card-pool">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <%= cl_image_tag @pool.photo.key, height: 300, width: 400, crop: :fill %>
   <div class="card-pool-infos">
       <div>
       <h2><%= @pool.name %></h2>
