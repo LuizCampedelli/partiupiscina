@@ -4,7 +4,7 @@
   <div class="row row-cols-4 align-items-center">
     <div class="row w-100 justify-content-md-center">
     <% @pools.each do |pool| %>
-    <div class="card-title col-md-auto"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("pisci9.jpg") %>)">
+    <div class="card-title col-md-auto"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=  %>)">
       <li><%= pool.name %></li>
       <%= link_to 'SHOW THIS POOL', pool_path(pool.id) %>
       <%= link_to "add a new pool", new_pool_path, method: :get %>
