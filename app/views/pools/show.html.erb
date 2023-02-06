@@ -1,18 +1,57 @@
-<div class="container">
 
-<div class="card-pool">
-  <%= cl_image_tag @pool.photo.key, height: 300, width: 400, crop: :fill %>
-  <div class="card-pool-infos">
+<%# carrossel começa aqui %>
+<div class="container">
+  <div class="card-pool">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <%# <% @pool.photos.each do |photo| %>
+
+<%# <%=   cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+
+          <div class="carousel-item active">
+             <%= cl_image_tag "sample", crop: :fill, class: "d-block w-100 carousel-img"%>
+          </div>
+          <div class="carousel-item">
+             <%= cl_image_tag "cld-sample-4", crop: :fill, class: "d-block w-100 carousel-img"%>
+          </div>
+          <div class="carousel-item">
+             <%= cl_image_tag "cld-sample-5", crop: :fill, class: "d-block w-100 carousel-img"%>
+          </div>
+        </div>
+      <%# <% end %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="card-pool-infos">
       <div>
-      <h2><%= @pool.name %></h2>
-      <p><%= @pool.size %> metros </p>
+        <h2><%= @pool.name %></h2>
+        <p><%= @pool.size %> metros </p>
+        <p><%= @pool.address %></p>
       </div>
       <h2 class="card-pool-pricing">R$<%= (@pool.price)/100 %>/ diária</h2>
+    </div>
   </div>
+  <br>
+<%= link_to "Editar", edit_pool_path, method: :get, class: "btn btn-flat" %>
+<%= link_to "Ver todas", pools_path, method: :get, class: "btn btn-flat" %>
 </div>
+<%# carrosel termina aqui %>
 <br>
-<%= button_to "Editar esta piscina", edit_pool_path, method: :get %>
-</div>
-<div>
-<%= link_to "Voltar", :pools, class: "btn btn-primary" %>
-</div>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -1,6 +1,6 @@
-<h1>Pools new</h1>
+<div class="container">
+<br>
+<br>
 <%= render partial: "form", locals: { pool: @pool } %>
-
-<div>
-<%= link_to "Voltar", :pools, class: "btn btn-primary" %>
+<%= link_to "Cancelar", pools_path, method: :get, class: "btn btn-flat" %>
 </div>
