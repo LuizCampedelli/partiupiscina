@@ -1,7 +1,8 @@
 <%= simple_form_for(pool) do |f| %>
-  <%= f.input :photo, as: :file %>
   <%= f.input :name %>
   <%= f.input :price %>
   <%= f.input :size %>
-  <%= f.submit %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.button_button t(".submit"), name: "Confirmar", class: "btn btn-flat" %>
+  <%= link_to "Voltar", pool_path, method: :get, class: "btn btn-flat" %>
 <% end %>

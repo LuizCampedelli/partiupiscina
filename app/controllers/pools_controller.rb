@@ -45,7 +45,7 @@ class PoolsController < ApplicationController
   private
 
   def pool_params
-    params.require(:pool).permit(:name, :size, :price, :photo)
+    params.require(:pool).permit(:name, :size, :price, photos: [])
   end
 
   def set_pool
@@ -53,4 +53,3 @@ class PoolsController < ApplicationController
   end
 
 end
-  
