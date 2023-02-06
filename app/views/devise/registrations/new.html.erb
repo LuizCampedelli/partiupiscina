@@ -19,27 +19,27 @@
         <div class="form-inputs">
             <%= f.input :email,
                 required: true,
-                autofocus: true,
+                autofocus: true, placeholder: "valentina@partiupiscina.com",
                 input_html: { autocomplete: "email" }%>
             <%= f.input :password,
-                required: true,
+                required: true, placeholder: "••••••",
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
-                required: true,
+                required: true, placeholder: "••••••",
                 input_html: { autocomplete: "new-password" } %>
-                                    </div>
-                                  <div class="col-md-8 col-xl-6 text-center mx-auto">
-                                  <div class="form-actions">
-                                <%= f.button :submit, "Sign up" %>
-                              </div>
-                                  </div>
-                          
-                        <%= render "devise/shared/links" %>
-                    </div>
-                </div>
+        </div>
+          <div class="col-md-8 col-xl-6 text-center mx-auto">
+            <div class="form-actions">
+              <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
             </div>
         </div>
+                          
+            <%= render "devise/shared/links" %>
+                  </div>
+              </div>
+          </div>
+      </div>
 </div>
 
 <% end %>
