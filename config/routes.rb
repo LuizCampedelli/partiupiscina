@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # root to: "pages#home"
   root to: "pools#index"
   resources :pools
-  
+
   # , only: [:home, :show, :new, :create] do
     # resources :pools, only: [:show, :new, :create, :edit, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
