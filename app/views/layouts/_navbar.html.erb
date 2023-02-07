@@ -5,9 +5,9 @@
     <% end %>
 
     <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-  <%= f.input :capacity, input_html: {value: 0} %>
-  <%= f.submit "Search", class: "btn btn-primary" %>
-<% end %>
+    <%= f.input :capacity, input_html: {value: 0} %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+    <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
