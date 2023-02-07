@@ -1,4 +1,5 @@
 class PoolsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @pools = Pool.all
   end
@@ -13,10 +14,11 @@ class PoolsController < ApplicationController
 
   def create
     @pool = Pool.new(pool_params)
+    @pool.user = current_user
     if @pool.save
       redirect_to root_path
     else
-      render :home
+      render :new
     end
   end
 
@@ -30,10 +32,24 @@ class PoolsController < ApplicationController
 
     redirect_to pool_path(@pool)
   end
-end
 
-private
+  def destroy
+    @pool = Pool.find(params[:id])
+    @pool.destroy
+  end
+
+  def search
+    @pools = Pool.where("name ILIKE ?", "%#{params[:query]}%")
+  end
+
+  private
 
   def pool_params
-    params.require(:pool).permit(:name, :size, :price, :user_id)
+    params.require(:pool).permit(:name, :size, :price, photos: [])
   end
+
+  def set_pool
+    @pool = Pool.find(params[:id])
+  end
+
+end

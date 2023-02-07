@@ -1,7 +1,13 @@
-<%= simple_form_for(pool) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :price %>
-  <%= f.input :size %>
-  <%= f.submit %>
-<% end %>
-
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4 col-xl-6">
+      <%= simple_form_for(pool) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :size %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+      <%= f.button_button t(".submit"), name: "Confirmar", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+  </div>
+</div>

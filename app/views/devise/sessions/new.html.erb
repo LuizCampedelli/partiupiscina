@@ -1,20 +1,42 @@
-<h2>Log in</h2>
-
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
-  <div class="form-inputs">
+
+<div class="container">
+  <div class="row py-5">
+    <div class="col-md-8 col-xl-6 text-center mx-auto">   
+  </div>
+</div>
+  <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-5">
+                    <div class="card-body d-flex flex-column align-items-center">
+                    <h2>Log in</h2>
+                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                            </svg></div>
+                              <%= f.error_notification %>
+
+        <div class="form-inputs">
     <%= f.input :email,
                 required: false,
-                autofocus: true,
+                autofocus: true, placeholder: "valentina@partiupiscina.com",
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
-                required: false,
+                required: false, placeholder: "••••••",
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: "btn btn-primary" %>
   </div>
-<% end %>
+
 
 <%= render "devise/shared/links" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<% end %>
