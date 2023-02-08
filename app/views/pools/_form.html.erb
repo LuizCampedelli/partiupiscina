@@ -5,8 +5,10 @@
       <%= f.input :name %>
       <%= f.input :price %>
       <%= f.input :size %>
+      <%= f.input :capacity %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
       <%= f.button_button t(".submit"), name: "Confirmar", class: "btn btn-flat" %>
+      <%# <% raise %> %>
       <% end %>
     </div>
   </div>
