@@ -1,28 +1,4 @@
-<%= render "banner"%>
-   <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-sm-10">
-          <div id="capacity">
-            <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-            <%= f.input :capacity, input_html: {value: 0} %>
-            <%= f.submit "Search", class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
+<%= render "banner" %>
+<%= render "pools" %>
+<%= render "addanewpool" %>
 
-<div class="container-fluid">
-  <div class="row row-cols-4 align-items-center">
-    <div class="row w-100 justify-content-md-center">
-    <% @pools.each do |pool| %>
-    <div class="card-title col-md-auto"  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=  %>)">
-      <li><%= pool.name %></li>
-      <%= link_to 'SHOW THIS POOL', pool_path(pool.id) %>
-      <%= link_to "add a new pool", new_pool_path, method: :get %>
-    </div>
-    <% end %>
-     </div>
-    </div>
-  </div>
-</div>
