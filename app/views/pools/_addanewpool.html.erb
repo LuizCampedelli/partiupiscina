@@ -1,1 +1,1 @@
-<%= link_to "add a new pool", new_pool_path, method: :get %>
+<%= link_to "add a new pool", new_pool_path if policy(Pool).new? %>
