@@ -60,6 +60,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_05_142745) do
     t.integer "size"
     t.integer "price"
     t.bigint "user_id", null: false
+    t.integer "capacity"
     t.string "address"
     t.float "latitude"
     t.float "longitude"

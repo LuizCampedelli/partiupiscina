@@ -1,52 +1,41 @@
-.card {
-  width: 300px;
-  height: 225px;
-  border: 1px solid #ccc;
-  border-radius: 2%;
-  box-shadow: 2px 2px 5px #ccc;
+.img-cl {
+  border-radius: 5% 5% 0% 0%;
+}
+
+.img .img-cl:hover {
+  background: #D347F6;
+  color: white;
+}
+
+li {
+  list-style-type: none;
+  text-align: center;
+}
+
+.col-md-auto {
+  border-radius: 5%;
   padding: 20px;
-  margin-left: 12px;
-  margin-right: 12px;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.card-pool {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-}
-
-.card-pool > img {
-  height: 100px;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card-pool h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-pool p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.card-pool .card-pool-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.card-pool-infos .card-pool-user {
+.index-infos {
   position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 300px;
+}
+
+.index-pool {
+  border-radius: 5% 0% 5% 5%;
+}
+
+.index-products {
+  height: 225px;
+  border-radius: 5% 0% 5% 5%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  align-items: center;
 }
