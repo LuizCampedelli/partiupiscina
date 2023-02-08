@@ -6,14 +6,17 @@ class PoolsController < ApplicationController
     else
       @pools = Pool.all
     end
+    @pools = policy_scope(Pool)
   end
 
   def show
     @pool = Pool.find(params[:id])
+    authorize @pool
   end
 
   def new
     @pool = Pool.new
+    authorize @pool
   end
 
   def create
@@ -24,10 +27,12 @@ class PoolsController < ApplicationController
     else
       render :new
     end
+    authorize @pool
   end
 
   def edit
     @pool = Pool.find(params[:id])
+    authorize @pool
   end
 
   def update
@@ -35,11 +40,13 @@ class PoolsController < ApplicationController
     @pool.update(pool_params)
 
     redirect_to pool_path(@pool)
+    authorize @pool
   end
 
   def destroy
     @pool = Pool.find(params[:id])
     @pool.destroy
+    authorize @pool
   end
 
   def search
