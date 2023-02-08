@@ -10,22 +10,14 @@
       </div>
 
       <div class="carousel-inner">
-
-        <%# <% @pool.photos.each do |photo| %>
-
-<%# <%=   cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-
-          <div class="carousel-item active">
-             <%= cl_image_tag "sample", crop: :fill, class: "d-block w-100 carousel-img"%>
+        
+        <% @pool.photos.each_with_index do |photo, index| %>
+          <div class="<%= index == 0 ? "carousel-item active" : "carousel-item"%>">
+             <%= cl_image_tag photo.key, crop: :fill, class: "d-block w-100 carousel-img"%>
           </div>
-          <div class="carousel-item">
-             <%= cl_image_tag "cld-sample-4", crop: :fill, class: "d-block w-100 carousel-img"%>
-          </div>
-          <div class="carousel-item">
-             <%= cl_image_tag "cld-sample-5", crop: :fill, class: "d-block w-100 carousel-img"%>
-          </div>
-        </div>
-      <%# <% end %>
+        <% end %>
+      </div>
+
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
