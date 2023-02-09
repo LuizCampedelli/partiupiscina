@@ -1,24 +1,19 @@
 <div class="container">
    <div class="justify-content-center">
     <div class="card-pool">
-
         <%# <div class="border" style="border-radius: 50px"><%= cl_image_tag "@pool.photo.key", height: 300, width: 400, crop: :fill if @pool.photo.key %>
         <div class="card-pool-infos">
-        <div class="justify-content-center">
-          <h2> Informações e Preço: </h2>
-          <br>
-          <p>Nome da piscina: <%= @pool.name %><br></p>
-          <p>Tamanho da piscina: <%= @pool.size %></p>
-
-        </div>
-
-
+          <div class="justify-content-center">
+            <h2> Informações e Preço: </h2>
+            <br>
+            <p>Nome da piscina: <%= @pool.name %><br></p>
+            <p>Tamanho da piscina: <%= @pool.size %></p>
+          </div>
         <h2 class="card-pool-pricing">R$<%= (@pool.price)/100 %>/ diária</h2>
       </div>
     </div>
   </div>
   <br>
-
   <div class="container col-xs-9 col-sm-7 col-sm-offset-1">
     <div class="input">
       <%= simple_form_for [@pool, @order] do |f| %>

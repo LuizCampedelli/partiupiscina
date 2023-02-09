@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
 
   def new
     @order = Order.new
-    @pool = Pool.find_by(id: params[:id])
+    @pool = Pool.find(params[:pool_id])
     authorize @order
   end
 
