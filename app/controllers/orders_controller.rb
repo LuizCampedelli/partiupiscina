@@ -34,14 +34,15 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
+    @pool = @order.pool
     authorize @order
   end
 
   def update
     @order = Order.find(params[:id])
-    @order.update(pool_params)
+    @order.update(order_params)
 
-    redirect_to order_path(@order)
+    redirect_to pool_order_path(@order.pool)
     authorize @order
   end
 
@@ -49,6 +50,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.destroy
     authorize @order
+    redirect_to pool_path(@order.pool)
   end
 
   private
