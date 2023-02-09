@@ -1,16 +1,18 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  
+
   def show
     @order = Order.find(params[:id])
     @pool = Pool.find(params[:pool_id])
     @price = @pool.price * (@order.enddate - @order.startdate).to_i
+    # authorize @pool
+    authorize @order
   end
 
   def new
     @order = Order.new
     @pool = Pool.find(params[:pool_id])
-    authorize @user
+    authorize @order
   end
 
   def create
@@ -23,6 +25,8 @@ class OrdersController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+    @pool.user = current_user
+    authorize @order
   end
 
   private
