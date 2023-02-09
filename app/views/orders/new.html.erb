@@ -26,4 +26,4 @@
     </div>
   </div>
 </div>
-
+<%= link_to "New Order", new_order_path if policy(Order).new? %>
