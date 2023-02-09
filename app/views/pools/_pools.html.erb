@@ -6,14 +6,21 @@
             <div class="card-pool index-pool">
                 <div class="card-products index-products">
                     <div class="card-pool-infos index-infos">
+                      <div class="card-pool-infos index-infos">
                         <div>
-                            <a href="<%= pool_path(pool.id) %>"><%= cl_image_tag "sample", :height=>300, :width=>300, :crop=>"fit", class: "img-cl" %></a>
-                            <li><strong><%= pool.name %></strong></li>
+                        <a href="<%= pool_path(pool.id) %>">
+                          <% if pool.photos.attached? %>
+                            <%= cl_image_tag pool.photos.first.key, :crop=>"fit", class: "img-cl" %></a>
+                          <% else %>
+                            <%= image_tag 'pisci9.jpg', :crop=>"fit", class: "img-cl" %></a>
+                          <% end %>
+                          <li><strong><%= pool.name %></strong></li>
                         </div>
+                      </div>
                     </div>
                 </div>
-          </div>          
-    </div>
-      <% end %>
+            </div>          
+          </div>
+        <% end %>
   </div>
 </div>
