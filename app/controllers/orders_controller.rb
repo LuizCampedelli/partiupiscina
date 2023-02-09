@@ -5,13 +5,12 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @pool = Pool.find(params[:pool_id])
     @price = @pool.price * (@order.enddate - @order.startdate).to_i
-    # authorize @pool
     authorize @order
   end
 
   def new
     @order = Order.new
-    @pool = Pool.find(params[:pool_id])
+    @pool = Pool.find_by(id: params[:id])
     authorize @order
   end
 
