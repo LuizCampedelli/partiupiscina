@@ -10,7 +10,7 @@
       </div>
 
       <div class="carousel-inner">
-        
+
         <% @pool.photos.each_with_index do |photo, index| %>
           <div class="<%= index == 0 ? "carousel-item active" : "carousel-item"%>">
              <%= cl_image_tag photo.key, crop: :fill, class: "d-block w-100 carousel-img"%>
@@ -39,6 +39,7 @@
   <br>
 <%= link_to "Editar", edit_pool_path, method: :get, class: "btn btn-flat" %>
 <%= link_to "Ver todas", pools_path, method: :get, class: "btn btn-flat" %>
+<%= link_to "Reservar agora", new_pool_order_path(@pool), method: :get, class: "btn btn-flat" %>
 </div>
 <%# carrosel termina aqui %>
 <br>

@@ -5,8 +5,49 @@
   </div>
 
   <div>
-    <div class="image d-flex justify-content-center p-4">
-      <%# <div class="border" style="border-radius: 50px"><%= cl_image_tag "@pool.photo.key", height: 300, width: 400, crop: :fill if @pool.photo.key %> %>
+
+ <%# div carrousel copia> #%>
+ <div class="container">
+  <div class="card-pool">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <% @pool.photos.each_with_index do |photo, index| %>
+          <div class="<%= index == 0 ? "carousel-item active" : "carousel-item"%>">
+             <%= cl_image_tag photo.key, crop: :fill, class: "d-block w-100 carousel-img"%>
+          </div>
+        <% end %>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="card-pool-infos">
+      <div>
+        <h2><%= @pool.name %></h2>
+        <p><%= @pool.size %> metros </p>
+        <p><%= @pool.address %></p>
+      </div>
+      <h2 class="card-pool-pricing">R$<%= (@pool.price)/100 %>/ diária</h2>
+    </div>
+  </div>
+  <br>
+</div>
+
+
+ <%# div carrousel copia> #%>
       </div>
     </div>
     <div>
