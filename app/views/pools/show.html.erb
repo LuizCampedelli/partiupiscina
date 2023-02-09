@@ -30,6 +30,7 @@
     <div class="card-pool-infos">
       <div>
         <h2><%= @pool.name %></h2>
+        <br>
         <p><%= @pool.size %> metros </p>
         <p><%= @pool.address %></p>
       </div>
@@ -37,9 +38,19 @@
     </div>
   </div>
   <br>
-<%= link_to "Editar", edit_pool_path, method: :get, class: "btn btn-flat" %>
+<%# <%= link_to "Editar", edit_pool_path, method: :get, class: "btn btn-flat" %>
 <%= link_to "Ver todas", pools_path, method: :get, class: "btn btn-flat" %>
-<%= link_to "Reservar agora", new_pool_order_path(@pool), method: :get, class: "btn btn-flat" %>
+
+<%= link_to "Reservar", new_pool_order_path(@pool), method: :get, class: "btn btn-flat" %>
+
+
+<% if policy(@pool).edit? %>
+  <%= link_to "Editar", edit_pool_path(@pool), class: "btn btn-flat" %> |
+<% end %>
+<!-- [...] -->
+
+<%# <%= button_to "Deletar", @pool, method: :delete if policy(@pool).destroy?, class: "btn btn-flat" %>
+
 </div>
 <%# carrosel termina aqui %>
 <br>

@@ -1,12 +1,3 @@
-.img-cl {
-  border-radius: 5% 5% 0% 0%;
-}
-
-.img .img-cl:hover {
-  background: #D347F6;
-  color: white;
-}
-
 li {
   list-style-type: none;
   text-align: center;
@@ -22,19 +13,26 @@ li {
 }
 
 .index-infos {
-  position: absolute;
+  position:sticky;
   right: 16px;
   top: -20px;
   width: 300px;
 }
 
 .index-pool {
-  border-radius: 5% 0% 5% 5%;
+  // box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 5% 5% 5% 5%;
+}
+
+.img-cl {
+  border-radius: 5% 5% 0% 0%;
+  height: 180px;
+  width: 300px;
 }
 
 .index-products {
-  height: 225px;
-  border-radius: 5% 0% 5% 5%;
+  height: 200px;
+  border-radius: 5% 5% 5% 5%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
