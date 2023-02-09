@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user!
+  
   def show
     @order = Order.find(params[:id])
     @pool = Pool.find(params[:pool_id])
@@ -8,6 +10,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @pool = Pool.find(params[:pool_id])
+    authorize @user
   end
 
   def create
