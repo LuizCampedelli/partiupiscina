@@ -10,6 +10,7 @@ class PoolsController < ApplicationController
   end
 
   def show
+    @order = Order.new
     @pool = Pool.find(params[:id])
     authorize @pool
   end
