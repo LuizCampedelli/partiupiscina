@@ -56,6 +56,21 @@
     </div>
   </div>
 
+  <tbody>
+    <% if @pool_reservations.first.present? %>
+      <% @pool_reservations.first.each do |order| %>
+      <tr>
+        <th scope="row"><%=order.id%></th>
+        <td><%=order.pool.name%></td>
+        <td><%=order.startdate%></td>
+        <td><%=order.enddate%></td>
+        <td><%=order.price%></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
 </div>
 <br>
 <div class="container-dashboard">
