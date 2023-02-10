@@ -49,10 +49,6 @@ class PoolsController < ApplicationController
     authorize @pool
   end
 
-  # def search
-  #   @pools = Pool.where("name ILIKE ?", "%#{params[:query]}%")
-  # end
-
   private
 
   def pool_params
