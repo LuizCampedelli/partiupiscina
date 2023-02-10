@@ -17,6 +17,7 @@
         <tbody>
           <% @pools.each do |pool| %>
           <tr>
+
             <td><%=pool.name%></td>
             <td><%=pool.address%></td>
             <td><%=pool.price%></td>
@@ -34,12 +35,14 @@
       <table class="table">
         <thead>
           <tr>
+
             <th scope="col">Pool</th>
             <th scope="col">Start Date</th>
             <th scope="col">End Date</th>
             <th scope="col">Price</th>
           </tr>
         </thead>
+
         <tbody>
           <% if @pool_reservations.first.present? %>
             <% @pool_reservations.first.each do |order| %>
@@ -58,12 +61,14 @@
   </div>
 
 <br>
+
 <div class="container-dashboard">
   <div class="col col-12">
     <div class="dash-medium-title">My Reservations</div>
         <table class="table">
           <thead>
             <tr>
+            
               <th scope="col">Pool</th>
               <th scope="col">Start Date</th>
               <th scope="col">End Date</th>
