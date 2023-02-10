@@ -1,5 +1,3 @@
-
-
 <div class="container-dashboard">
   <div class="row">
 
@@ -15,6 +13,7 @@
             <th scope="col">Size</th>
           </tr>
         </thead>
+        
         <tbody>
           <% @pools.each do |pool| %>
           <tr>
@@ -42,7 +41,8 @@
           </tr>
         </thead>
         <tbody>
-          <% @pool_reservations.first.each do |order| %>
+          <% if @pool_reservations.first.present? %>
+            <% @pool_reservations.first.each do |order| %>
             <tr>
 
               <td><%=order.pool.name%></td>
@@ -50,28 +50,13 @@
               <td><%=order.enddate%></td>
               <td><%=order.price%></td>
             </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
     </div>
   </div>
 
-  <tbody>
-    <% if @pool_reservations.first.present? %>
-      <% @pool_reservations.first.each do |order| %>
-      <tr>
-        <th scope="row"><%=order.id%></th>
-        <td><%=order.pool.name%></td>
-        <td><%=order.startdate%></td>
-        <td><%=order.enddate%></td>
-        <td><%=order.price%></td>
-      </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-
-</div>
 <br>
 <div class="container-dashboard">
   <div class="col col-12">
