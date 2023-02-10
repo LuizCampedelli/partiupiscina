@@ -21,6 +21,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @pool = Pool.find(params[:pool_id])
+    @price = @pool.price * (@order.enddate - @order.startdate).to_i
+    @order.price = @price
     @order.user = current_user
     @order.pool = @pool
     if @order.save

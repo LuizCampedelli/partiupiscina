@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :orders, except: [:destroy]
   end
   resources :orders, only: [:destroy]
+  get "dashboard", to: "dashboard#show"
   # , only: [:home, :show, :new, :create] do
     # resources :pools, only: [:show, :new, :create, :edit, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
