@@ -2,11 +2,10 @@ class PoolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     if params["search"].present?
-      @pools = Pool.where(capacity: params["search"]["capacity"])
+      @pools = policy_scope(Pool).where(capacity: params["search"]["capacity"])
     else
-      @pools = Pool.all
+      @pools = policy_scope(Pool)
     end
-    @pools = policy_scope(Pool)
   end
 
   def show
