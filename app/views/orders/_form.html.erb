@@ -1,7 +1,7 @@
 <div class="container p-4">
   <%= simple_form_for [@pool, @order] do |f| %>
           <%= f.input :startdate %>
-          <%= f.input :enddate %>
+          <%= f.input :enddate, placeholder: "Data final:", label:false %>
           <%= f.submit "Reservar", class: "btn btn-primary p-3" %>
           <% end %>
 </div>
