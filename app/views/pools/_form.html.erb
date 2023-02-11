@@ -8,11 +8,11 @@
       <%= f.input :size %>
       <%= f.input :capacity %>
       <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-      <%= f.button_button t(".submit"), name: "Confirmar", class: "btn btn-flat" %>
+      <%= f.button_button t(".submit"), name: "Confirm", class: "btn btn-flat" %>
       <% if pool.id.nil? %>
-        <%= link_to "Cancelar", pools_path, method: :get, class: "btn btn-flat" %>
+        <%= link_to "Cancel", pools_path, method: :get, class: "btn btn-flat" %>
       <%else%>
-        <%= link_to "Cancelar", pool_path, method: :get, class: "btn btn-flat" %>
+        <%= link_to "Cancel", pool_path, method: :get, class: "btn btn-flat" %>
       <% end %>
   <% end %>
     </div>

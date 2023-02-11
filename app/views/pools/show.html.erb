@@ -31,21 +31,21 @@
       <div>
         <h2><%= @pool.name %></h2>
         <br>
-        <p><%= @pool.size %> metros </p>
+        <p><%= @pool.size %> meters </p>
         <p><%= @pool.address %></p>
       </div>
-      <h2 class="card-pool-pricing">R$<%= (@pool.price)/100 %>/ diária</h2>
+      <h2 class="card-pool-pricing">£<%= (@pool.price)/100 %>/ per day</h2>
     </div>
   </div>
   <br>
 <%# <%= link_to "Editar", edit_pool_path, method: :get, class: "btn btn-flat" %>
-<%= link_to "Ver todas", pools_path, method: :get, class: "btn btn-flat" %>
+<%= link_to "See all pools", pools_path, method: :get, class: "btn btn-flat" %>
 
-<%= link_to "Reservar", new_pool_order_path(@pool), method: :get, class: "btn btn-flat" %>
+<%= link_to "Reserve", new_pool_order_path(@pool), method: :get, class: "btn btn-flat" %>
 
 
 <% if policy(@pool).edit? %>
-  <%= link_to "Editar", edit_pool_path(@pool), class: "btn btn-flat" %>
+  <%= link_to "Edit", edit_pool_path(@pool), class: "btn btn-flat" %>
 <% end %>
 <!-- [...] -->
 

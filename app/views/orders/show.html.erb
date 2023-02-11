@@ -2,15 +2,15 @@
     <br>
     <br>
     <div class="justify-content-center">
-      <h1><p style="color: black;"> Obrigado pela sua reserva. Nos vemos em breve! &hearts; </p></h1>
-      <p> Preço total:
+      <h1><p style="color: black;"> Thank you for your reservation. See you soon! &hearts; </p></h1>
+      <p> Total price:
       <%= @price / 100 %></p>
 
 <% if policy(@order).edit? %>
-  <%= link_to "Editar", edit_pool_order_path(@order) %> |
+  <%= link_to "Edit", edit_pool_order_path(@order) %> |
 <% end %>
 <!-- [...] -->
-<%= button_to "Deletar", @order, method: :delete if policy(@order).destroy? %>
+<%= button_to "Delete", @order, method: :delete if policy(@order).destroy? %>
 <%= link_to "New Order", new_pool_order_path if policy(Order).new? %>
   </div>
 </div>
