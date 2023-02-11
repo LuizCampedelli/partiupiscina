@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.update(order_params)
 
-    redirect_to pool_order_path(@order.pool)
+    redirect_to pool_order_path(@order.pool), notice: "Updated"
     authorize @order
   end
 
