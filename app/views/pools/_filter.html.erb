@@ -1,6 +1,22 @@
-  <%= simple_form_for :search, url: root_path, method: "GET", html: { class: 'form-inline' } do |f| %>  
-    <%= f.input :capacity %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
-
-
+<%= simple_form_for :search, url: root_path, method: "GET" do |f| %>
+  <div class="row justify-content-center mt-3">
+      <div class="col-2">
+        <%= f.input :name, label: false, placeholder: "Name" %>
+      </div>
+      <div class="col-2">
+        <%= f.input :address, label: false, placeholder: "Address" %>
+      </div>
+      <div class="col-2">
+        <%= f.input :price, label: false, placeholder: "Price" %>
+      </div>
+      <div class="col-2">
+        <%= f.input :size, label: false, placeholder: "Size" %>
+      </div>
+      <div class="col-2">
+        <%= f.input :capacity, label: false, placeholder: "Capacity" %>
+      </div>
+      <div class="col-1">
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      </div>
+  </div>
+<% end %>

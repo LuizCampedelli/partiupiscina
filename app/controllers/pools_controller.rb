@@ -3,7 +3,12 @@ class PoolsController < ApplicationController
   def index
 
     if params["search"].present?
-      @pools = policy_scope(Pool).where(capacity: params["search"]["capacity"])
+      capacity = params["search"]["capacity"].present? ? params["search"]["capacity"] : 0
+      size = params["search"]["size"].present? ? params["search"]["size"] : 0
+      name = params["search"]["name"].present? ? "%" + params["search"]["name"] + "%" : nil
+      address = params["search"]["address"].present? ? "%" + params["search"]["address"] + "%" : nil
+      price = params["search"]["price"].present? ? params["search"]["price"].to_i * 100 : 0
+      @pools = policy_scope(Pool).where("capacity= :capacity OR size= :size OR name ILIKE :name OR address ILIKE :address OR price= :price", capacity: capacity, size: size, name: name, address: address, price: price)
     else
       @pools = policy_scope(Pool)
     end
