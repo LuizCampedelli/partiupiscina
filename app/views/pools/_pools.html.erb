@@ -14,12 +14,13 @@
                           <% else %>
                             <%= image_tag 'relax.jpg', :crop=>"fit", class: "img-cl" %></a>
                           <% end %>
-                          <li><strong><%= pool.name %></strong></li>
+                          <li><strong><%= pool.name %></strong>
+                          <p><%= pool.address %></li>
                         </div>
                       </div>
                     </div>
                 </div>
-            </div>          
+            </div>
           </div>
         <% end %>
   </div>
