@@ -61,10 +61,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_011105) do
     t.integer "size"
     t.integer "price"
     t.bigint "user_id", null: false
-    t.integer "capacity"
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+    t.integer "capacity"
     t.index ["user_id"], name: "index_pools_on_user_id"
   end
 

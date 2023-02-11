@@ -1,6 +1,6 @@
 .container-dashboard {
   align-items: space-around;
-  background: white;
+  background: #A8F9FA;
   padding: 16px;
   margin: 80px;
 }
@@ -9,19 +9,8 @@
   font-size: 26px;
   color:#4052DE;
   font-weight: bold;
-  margin-left: 250px
 }
 
-.dash-big-title{
-  font-size: 26px;
-  color:#4052DE;
-  font-weight: bold;
-  margin-left: 160px
-}
-
-.dash-medium-title{
-  font-size: 26px;
-  color:#4052DE;
-  font-weight: bold;
-  margin-left: 500px
+.card{
+  background-color: rgb(246, 245, 245);
 }
