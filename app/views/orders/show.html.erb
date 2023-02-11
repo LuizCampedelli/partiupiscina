@@ -2,15 +2,19 @@
     <br>
     <br>
     <div class="justify-content-center">
-      <h1><p style="color: black;"> Thank you for your reservation. See you soon! &hearts; </p></h1>
-      <p> Total price:
+      <h3><p style="color: black;"> Thank you for your reservation. See you soon! &hearts; </p></h3>
+      <p> Total price: £
       <%= @price / 100 %></p>
+      <strong>Payment must be made directly to the pool owner<strong>
+
+  </div>
+
 
 <% if policy(@order).edit? %>
-  <%= link_to "Edit", edit_pool_order_path(@order) %> |
+  <%= link_to "Edit", edit_pool_order_path(@order), class: "btn btn-flat" %>
 <% end %>
 <!-- [...] -->
-<%= button_to "Delete", @order, method: :delete if policy(@order).destroy? %>
-<%= link_to "New Order", new_pool_order_path if policy(Order).new? %>
-  </div>
+<%= link_to "Delete", order_path(@order), data: {turbo_method: :delete}, class: "btn btn-flat" if policy(@order).destroy? %>
+<%= link_to "New Order", new_pool_order_path, class: "btn btn-flat" if policy(Order).new? %>
+
 </div>

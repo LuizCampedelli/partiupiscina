@@ -1,10 +1,9 @@
-
 <div class="container-dashboard">
-  <div class="row">
-  <%= render "addanewpool" %>
+  <div class="d-flex">
 
-    <div class="col col-6">
-      <div class="dash-title">My Pools</div>
+
+    <div class="col col-6 card">
+      <div class="dash-title text-center">My Pools</div>
       <table class="table">
         <thead>
           <tr>
@@ -15,7 +14,7 @@
             <th scope="col">Size</th>
           </tr>
         </thead>
-        
+
         <tbody>
           <% @pools.each do |pool| %>
           <tr>
@@ -32,41 +31,8 @@
 
     </div>
 
-    <div class="col col-6">
-      <div class="dash-big-title">My Pool's Reservations</div>
-      <table class="table">
-        <thead>
-          <tr>
-
-            <th scope="col">Pool</th>
-            <th scope="col">Start Date</th>
-            <th scope="col">End Date</th>
-            <th scope="col">Price</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% if @pool_reservations.first.present? %>
-            <% @pool_reservations.first.each do |order| %>
-            <tr>
-
-              <td><%=order.pool.name%></td>
-              <td><%=order.startdate%></td>
-              <td><%=order.enddate%></td>
-              <td><%=order.price%></td>
-            </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-<br>
-
-<div class="container-dashboard">
-  <div class="col col-12">
-    <div class="dash-medium-title">My Reservations</div>
+    <div class="col col-6 card">
+      <div class="dash-title text-center">My Pool's Reservations</div>
         <table class="table">
           <thead>
             <tr>
@@ -77,19 +43,55 @@
               <th scope="col">Price</th>
             </tr>
           </thead>
+
           <tbody>
-            <% @orders.each do |order| %>
+            <% if @pool_reservations.first.present? %>
+              <% @pool_reservations.first.each do |order| %>
               <tr>
+
                 <td><%=order.pool.name%></td>
                 <td><%=order.startdate%></td>
                 <td><%=order.enddate%></td>
                 <td><%=order.price%></td>
               </tr>
+              <% end %>
             <% end %>
           </tbody>
         </table>
+
+    </div>
   </div>
 
+
+  <br>
+  <%= render "addanewpool" %>
+  <br>
+
+
+    <div class="col col-12 card mt-4">
+      <div class="dash-title text-center">My Reservations</div>
+          <table class="table">
+            <thead>
+              <tr>
+
+                <th scope="col">Pool</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @orders.each do |order| %>
+                <tr>
+                  <td><%=order.pool.name%></td>
+                  <td><%=order.startdate%></td>
+                  <td><%=order.enddate%></td>
+                  <td><%=order.price%></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+      </div>
+    </div>
+
 </div>
-
-
