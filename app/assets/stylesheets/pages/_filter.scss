@@ -1,24 +1,15 @@
-.form-group {
+.form-inline {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.btnblue {
-  // background-color: #2E8B57;
-  border: none;
-  // color: white;
-  padding: 5px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  // font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5%;
+.form-inline input[type="text"] {
+  // width: 60%;
+  margin-right: 10px;
 }
 
-// .input-append {
-//   border-radius: 5px;
-//   float:inline-end;
-// }
+.form-inline input[type="submit"] {
+  width: 5%;
+  margin-top: 15px;
+}

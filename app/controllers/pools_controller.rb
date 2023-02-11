@@ -1,13 +1,11 @@
 class PoolsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-
     if params["search"].present?
       @pools = policy_scope(Pool).where(capacity: params["search"]["capacity"])
     else
       @pools = policy_scope(Pool)
     end
-    @pools = Pool.all
 
     @markers = @pools.geocoded.map do |pool|
     {
