@@ -52,7 +52,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.destroy
     authorize @order
-    redirect_to pool_path(@order.pool)
+    redirect_to pool_path(@order.pool), notice: "Reservation Deleted"
   end
 
   private
