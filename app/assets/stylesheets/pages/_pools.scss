@@ -1,6 +1,7 @@
 li {
   list-style-type: none;
-  text-align: center;
+  text-align:left;
+  text-indent: 4px;
 }
 
 .col-md-auto {
@@ -31,8 +32,8 @@ li {
 }
 
 .index-products {
-  height: 250px;
-  border-radius: 5% 5% 5% 5%;
+  height: 260px;
+  border-radius: 5% 5% 0% 0%;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
